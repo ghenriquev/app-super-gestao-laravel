@@ -20,6 +20,10 @@ class AlterFornecedoresNovasColunas extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        //
+        Schema::table('fornecedores', function (Blueprint $table) {
+            // $table->dropColumn('uf');
+            // $table->dropColumn('email');
+            $table->dropColumn(['uf', 'email']);
+        });
     }
 };
